@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        // @param {number[]} nums
+        // @param {number} target
+        // @return {number[]}
+        let twoSum = function(nums, target) {
+            let map = {};
+            let indices = [];
+            for (let i=0; i<nums.length; i++) {
+                let n = nums[i];
+                if (typeof map[n] === 'undefined') {
+                    let com = target - nums[i];
+                    map[com] = i;
+                } else {
+                    indices = [map[n], i];
+                }
+            }
+            return indices;
+        }
+
+        let nums = [2, 7, 11, 15];
+        let target = 9;
+        console.log(twoSum(nums, target));
+    </script>
+    
+</body>
+</html>
